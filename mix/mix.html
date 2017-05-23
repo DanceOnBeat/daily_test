@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>mix test</title>
+    </head>
+
+    <body>
+        <script src="./mix.js"></script>
+        <script>
+            var A = {
+                name: 'Ray',
+                address: {
+                    province: 'zj',
+                    city: 'wz'
+                }
+            }
+
+            mix(A, {name: 'LuLu', address: {province: 'fj', city: 'fz'}, age: 24}, true, true);
+            console.log(A);
+        </script>
+    </body>
+</html>
