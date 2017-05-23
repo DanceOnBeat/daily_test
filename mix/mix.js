@@ -1,3 +1,9 @@
+/** 
+ * @param {Object|Array} receiver
+ * @param {Object|Array} supplier can define multiple
+ * @param {Boolean} overwrite Default is true. To describe whether you can override the property with the same key
+ * @param {Boolean} deep Default is true. To describe whether you can mix deeply when the property is an Object or Array
+ */
 function mix () {
     var argArr = Array.prototype.slice.call(arguments),
         r = argArr[0],
@@ -9,6 +15,9 @@ function mix () {
         slen = len - 3,
         ow = argArr[len - 2],
         d = argArr[len - 1];
+    if (typeof r !== 'object' && typeof r !== 'function') { // 若第一个表示接收的参数不为object，array，function等类型
+        r = {};
+    }
     if (typeof ow !== 'boolean') {   // 检测倒数第二个参数是否为boolean类型
         slen++;
         ow = d;
@@ -24,7 +33,7 @@ function mix () {
         sArr = argArr.slice(1, 1 + slen);
     }
     sArr.forEach(function(item, index, arr) {
-        if (typeof item === 'object') {     // 要混入的对象必须为对象或数组
+        if (getType(item) === 'Object' || getType(item) === 'Array') {     // 要混入的对象必须为对象或数组
             for (key in item) {
                 if (!ow && hasOwn.call(r, key)) {   // 如果ow为false，即不允许重写同名属性
                     continue;
