@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>mix test</title>
+    </head>
+
+    <body>
+        <script src="./oo.js"></script>
+        <script>
+            var Animal = Class.extend({
+                init: function(opts) {
+                    this.name = opts.name;
+                    this.age = opts.age;
+                },
+                run: function() {
+                    console.log(this.name + ' is running');
+                }
+            })
+
+            var a = new Animal({
+                name: 'Dog',
+                age: 12
+            });
+
+            a.run();
+
+            var Snake = Animal.extend({
+                say: function() {
+                    console.log("I'm a " + this.name);
+                }
+            });
+
+            var s = new Snake({
+                name: 'Snake',
+                age: 24
+            });
+
+            s.run();
+            s.say();
+        </script>
+    </body>
+</html>
