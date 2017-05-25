@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>RaySlide test</title>
+		<link rel="stylesheet" type="text/css" href="./slide.css">
+		<script type="text/javascript" src="./jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="./slide.js"></script>
+	</head>
+
+	<body>
+		<div>
+    		<div id="Ray_Slide">
+         		<div class="tab-content">
+              		<div class="tab-pannel-wrap">
+                      	<div class="tab-pannel">
+                           <img src="./1.jpg"/>
+                      	</div>
+                      	<div class="tab-pannel">
+                           <img src="./2.jpg"/>
+                      	</div>
+                      	<div class="tab-pannel">
+                           <img src="./3.jpg"/>
+                      	</div>
+                      	<div class="tab-pannel">
+                           <img src="./4.jpg"/>
+                      	</div>
+              		</div>
+         		</div>
+         		<ul class="tab-nav">
+                   <li><a href="javascript:void(0)">1</a></li>
+                   <li><a href="javascript:void(0)">2</a></li>
+                   <li><a href="javascript:void(0)">3</a></li>
+                   <li><a href="javascript:void(0)">4</a></li>
+         		</ul>
+    		</div>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+				var slide = new $.fn.RaySlide({
+					container: '#Ray_Slide',	// container
+					height: 400,	// 容器高度
+					speed: 2000,	//	动画播放速度
+					timeout: 4000	// 动画间隔
+				});
+			})
+		</script>
+	</body>
+</html>
