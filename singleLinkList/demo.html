@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sigle link list test</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript" src="./singleLinkList.js">	</script>
+	<script type="text/javascript">
+		var L = new SingleLinkList();
+		var a = L.insert('one', L.header);
+		var b = L.insert('two', a);
+		var c = L.insert('three', b);
+		L.delete('three');
+
+		console.log(L.find('two'));
+	</script>
+</body>
+</html>
