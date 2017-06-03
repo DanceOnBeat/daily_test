@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>double link list test</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript" src="./doubleLinkList.js"></script>
+	<script type="text/javascript">
+		var DL = new DoubleLinkList();
+
+		var a = DL.insert('one', DL.header);
+		var b = DL.insert('two', a);
+		var c = DL.insert('three', b);
+
+		DL.delete('three');
+
+		console.log(DL.find('two'));
+	</script>
+</body>
+</html>
